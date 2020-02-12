@@ -1,0 +1,1 @@
+Oblique_Batch "boston.ive" "points_boston.shp" "B:/VGE/DSMRenderer_2016_02_14/bin/Boston/" 0.25

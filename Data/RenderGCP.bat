@@ -1,0 +1,2 @@
+Oblique_GCP "F:/Oblique_Photogrammetry/weihai/Data/all.desc" "./test/gcp_colored/45_0" 2 45 0 "points.shp"
+Oblique_GCP "F:/Oblique_Photogrammetry/weihai/Data/all.desc" "./test/gcp_colored/45_180" 2 45 180 "points.shp"

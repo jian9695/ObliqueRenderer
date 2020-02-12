@@ -1,0 +1,1 @@
+Oblique_Renderer "F:/Oblique_Photogrammetry/xinji/Data/all.desc" "xinji_test/" 1 45 0

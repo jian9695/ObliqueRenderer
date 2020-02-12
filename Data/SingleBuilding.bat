@@ -1,0 +1,1 @@
+Oblique_Renderer "boston.ive" "D:/Projects/VGE/DSMRenderer_2016_02_14/bin/Boston/10CM_45_0" 1.0 45 0

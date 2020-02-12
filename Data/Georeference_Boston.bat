@@ -1,0 +1,1 @@
+Oblique_Georeference "B:/VGE/DSMRenderer_2016_02_14/bin/Boston/files/" "B:/VGE/DSMRenderer_2016_02_14/bin/Boston/georef.tif" 329542.6607715 4690819.062525

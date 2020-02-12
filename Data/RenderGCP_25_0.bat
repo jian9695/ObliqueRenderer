@@ -1,0 +1,1 @@
+GCP_Renderer "F:/Oblique_Photogrammetry/weihai/Data/all.desc" "B:/VGE/DSMRenderer_2016_02_14/bin/ljm" 5 25 0

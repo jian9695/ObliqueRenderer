@@ -1,0 +1,1 @@
+gdalbuildvrt img_1m/oblique.vrt img_1m/*.tif
