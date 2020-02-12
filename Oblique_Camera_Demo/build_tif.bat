@@ -1,0 +1,1 @@
+gdalbuildvrt ljm/oblique.vrt ljm/*.tif

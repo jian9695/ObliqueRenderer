@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Oblique_Camera_Demo", "Oblique_Camera_Demo\Oblique_Camera_Demo.vcxproj", "{1EBA5AB9-6603-493D-A2B1-5B6A78538187}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Oblique_Renderer", "Oblique_Renderer\Oblique_Renderer.vcxproj", "{B80824D8-6021-4ED5-894D-668829F40350}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PerformanceTest", "PerformanceTest\PerformanceTest.vcxproj", "{D1FFF330-FBDF-46FE-9F0B-649709F29896}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EBA5AB9-6603-493D-A2B1-5B6A78538187}.Debug|x64.ActiveCfg = Debug|x64
+		{1EBA5AB9-6603-493D-A2B1-5B6A78538187}.Debug|x64.Build.0 = Debug|x64
+		{1EBA5AB9-6603-493D-A2B1-5B6A78538187}.Debug|x86.ActiveCfg = Debug|Win32
+		{1EBA5AB9-6603-493D-A2B1-5B6A78538187}.Debug|x86.Build.0 = Debug|Win32
+		{1EBA5AB9-6603-493D-A2B1-5B6A78538187}.Release|x64.ActiveCfg = Release|x64
+		{1EBA5AB9-6603-493D-A2B1-5B6A78538187}.Release|x64.Build.0 = Release|x64
+		{1EBA5AB9-6603-493D-A2B1-5B6A78538187}.Release|x86.ActiveCfg = Release|Win32
+		{1EBA5AB9-6603-493D-A2B1-5B6A78538187}.Release|x86.Build.0 = Release|Win32
+		{B80824D8-6021-4ED5-894D-668829F40350}.Debug|x64.ActiveCfg = Debug|x64
+		{B80824D8-6021-4ED5-894D-668829F40350}.Debug|x64.Build.0 = Debug|x64
+		{B80824D8-6021-4ED5-894D-668829F40350}.Debug|x86.ActiveCfg = Debug|Win32
+		{B80824D8-6021-4ED5-894D-668829F40350}.Debug|x86.Build.0 = Debug|Win32
+		{B80824D8-6021-4ED5-894D-668829F40350}.Release|x64.ActiveCfg = Release|x64
+		{B80824D8-6021-4ED5-894D-668829F40350}.Release|x64.Build.0 = Release|x64
+		{B80824D8-6021-4ED5-894D-668829F40350}.Release|x86.ActiveCfg = Release|Win32
+		{B80824D8-6021-4ED5-894D-668829F40350}.Release|x86.Build.0 = Release|Win32
+		{D1FFF330-FBDF-46FE-9F0B-649709F29896}.Debug|x64.ActiveCfg = Debug|x64
+		{D1FFF330-FBDF-46FE-9F0B-649709F29896}.Debug|x64.Build.0 = Debug|x64
+		{D1FFF330-FBDF-46FE-9F0B-649709F29896}.Debug|x86.ActiveCfg = Debug|Win32
+		{D1FFF330-FBDF-46FE-9F0B-649709F29896}.Debug|x86.Build.0 = Debug|Win32
+		{D1FFF330-FBDF-46FE-9F0B-649709F29896}.Release|x64.ActiveCfg = Release|x64
+		{D1FFF330-FBDF-46FE-9F0B-649709F29896}.Release|x64.Build.0 = Release|x64
+		{D1FFF330-FBDF-46FE-9F0B-649709F29896}.Release|x86.ActiveCfg = Release|Win32
+		{D1FFF330-FBDF-46FE-9F0B-649709F29896}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
