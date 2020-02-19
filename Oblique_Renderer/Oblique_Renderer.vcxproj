@@ -104,13 +104,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(OSGEO4W)\include;$(OSGEO4W)\include\qt4\QtCore;$(OSGEO4W)\include\qt4\QtGui;$(OSGEO4W)\include\qt4</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(vcpkg_x64)\include;$(vcpkg_x64)\include\qt4\QtCore;$(vcpkg_x64)\include\qt4\QtGui;$(vcpkg_x64)\include\qt4</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>qtmaind.lib;QtCored4.lib;QtGuid4.lib;QtSqld4.lib;QtMultimediad4.lib;QtXmld4.lib;QtOpenGLd4.lib;opengl32.lib;glu32.lib;QtNetworkd4.lib;QtScriptd4.lib;Qt3Supportd4.lib;comdlg32.lib;QAxServerd.lib;QtSvgd4.lib;QtHelpd4.lib;QtWebKitd4.lib;QtXmlPatternsd4.lib;QtTestd4.lib;QtDeclaratived4.lib;phonond4.lib;osgEarthd.lib;osgEarthFeaturesd.lib;osgEarthUtild.lib;osgEarthQtd.lib;osgEarthSymbologyd.lib;osgEarthAnnotationd.lib;OpenThreadsd.lib;osgd.lib;osgDBd.lib;osgUtild.lib;osgViewerd.lib;osgWidgetd.lib;osgSimd.lib;osgTextd.lib;osgGAd.lib;osgShadowd.lib;osgQtd.lib;osgManipulatord.lib;gdal_i.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OSGEO4W)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qtmaind.lib;QtCored4.lib;QtGuid4.lib;QtSqld4.lib;QtMultimediad4.lib;QtXmld4.lib;QtOpenGLd4.lib;opengl32.lib;glu32.lib;QtNetworkd4.lib;QtScriptd4.lib;Qt3Supportd4.lib;comdlg32.lib;QAxServerd.lib;QtSvgd4.lib;QtHelpd4.lib;QtWebKitd4.lib;QtXmlPatternsd4.lib;QtTestd4.lib;QtDeclaratived4.lib;phonond4.lib;osgEarthd.lib;osgEarthFeaturesd.lib;osgEarthUtild.lib;osgEarthQtd.lib;osgEarthSymbologyd.lib;osgEarthAnnotationd.lib;OpenThreadsd.lib;osgd.lib;osgDBd.lib;osgUtild.lib;osgViewerd.lib;osgWidgetd.lib;osgSimd.lib;osgTextd.lib;osgGAd.lib;osgShadowd.lib;osgQtd.lib;osgManipulatord.lib;gdal.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(vcpkg_x64)\lib</AdditionalLibraryDirectories>
       <OutputFile>$(SolutionDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
@@ -140,15 +140,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(OSGEO4W)\include;$(OSGEO4W)\include\qt4\QtCore;$(OSGEO4W)\include\qt4\QtGui;$(OSGEO4W)\include\qt4</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(vcpkg_x64)\include;$(vcpkg_x64)\include\qt4\QtCore;$(vcpkg_x64)\include\qt4\QtGui;$(vcpkg_x64)\include\qt4</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(OSGEO4W)\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>qtmain.lib;QtCore4.lib;QtGui4.lib;QtMultimedia4.lib;QtXml4.lib;QtSql4.lib;QtOpenGL4.lib;opengl32.lib;glu32.lib;QtNetwork4.lib;QtScript4.lib;Qt3Support4.lib;comdlg32.lib;QAxServer.lib;QtSvg4.lib;QtHelp4.lib;QtWebKit4.lib;QtXmlPatterns4.lib;QtTest4.lib;QtDeclarative4.lib;phonon4.lib;osgEarth.lib;osgEarthFeatures.lib;osgEarthUtil.lib;osgEarthSymbology.lib;osgEarthAnnotation.lib;osg.lib;osgDB.lib;osgUtil.lib;osgViewer.lib;OpenThreads.lib;osgSim.lib;osgTerrain.lib;osgFX.lib;osgShadow.lib;osgManipulator.lib;osgText.lib;osgGA.lib;gdal_i.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(vcpkg_x64)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qtmain.lib;QtCore4.lib;QtGui4.lib;QtMultimedia4.lib;QtXml4.lib;QtSql4.lib;QtOpenGL4.lib;opengl32.lib;glu32.lib;QtNetwork4.lib;QtScript4.lib;Qt3Support4.lib;comdlg32.lib;QAxServer.lib;QtSvg4.lib;QtHelp4.lib;QtWebKit4.lib;QtXmlPatterns4.lib;QtTest4.lib;QtDeclarative4.lib;phonon4.lib;osgEarth.lib;osgEarthFeatures.lib;osgEarthUtil.lib;osgEarthSymbology.lib;osgEarthAnnotation.lib;osg.lib;osgDB.lib;osgUtil.lib;osgViewer.lib;OpenThreads.lib;osgSim.lib;osgTerrain.lib;osgFX.lib;osgShadow.lib;osgManipulator.lib;osgText.lib;osgGA.lib;gdal.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(SolutionDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
