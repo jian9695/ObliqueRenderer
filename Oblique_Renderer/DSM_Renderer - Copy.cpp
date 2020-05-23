@@ -757,7 +757,7 @@ public:
 						GDALClose((GDALDatasetH)poDstDS);
 				CSLDestroy(papszOptions);
 				GDALClose((GDALDatasetH)poSrcDS);
-				//QFile::remove(ssSrc.str().data());
+				QFile::remove(ssSrc.str().data());
 				return ssDest.str();
 		}
 		void produceImage(int id, osg::Image* img)
@@ -1506,8 +1506,8 @@ int main(int argc, char** argv)
 
 				bb = newbb;
 		}
-		int texSizeX = 2048;
-		int texSizeY = 2048;
+		int texSizeX = 8192;
+		int texSizeY = 8192;
 
 		osg::ref_ptr<osg::Texture2D> tex = new osg::Texture2D;
 
@@ -1561,7 +1561,7 @@ int main(int argc, char** argv)
 				"void main(void)\n"
 				"{\n"
 				"gl_TexCoord[0] = gl_MultiTexCoord0;\n"
-				"pos = gl_Vertex;\n"
+				"pos = viewMatrixInverse * gl_ModelViewMatrix * gl_Vertex;\n"
 				"gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;\n"
 				"}\n";
 		char fragmentShaderSource[] =
@@ -1572,7 +1572,7 @@ int main(int argc, char** argv)
 				"varying vec4 pos;\n"
 				"void main(void) \n"
 				"{\n"
-				"gl_FragData[0] = vec4(pos.z);\n"
+				"gl_FragData[0] = vec4(pos.x);\n"
 				"}\n";
 
 		program->addShader(new osg::Shader(osg::Shader::FRAGMENT, fragmentShaderSource));

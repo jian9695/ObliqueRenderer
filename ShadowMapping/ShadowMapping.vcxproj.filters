@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="ModelLoader.cpp" />
+    <ClCompile Include="ShadowMapping.cpp" />
+    <ClCompile Include="ScreenOverlay.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="GrassSolar.cpp">
+      <Filter>Solar</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeFile.cpp">
+      <Filter>Solar</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ModelLoader.h" />
+    <ClInclude Include="ScreenOverlay.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="GrassSolar.h">
+      <Filter>Solar</Filter>
+    </ClInclude>
+    <ClInclude Include="GDAL_DS.h">
+      <Filter>Solar</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeFile.h">
+      <Filter>Solar</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Solar">
+      <UniqueIdentifier>{99ca679a-c8df-444b-8bbc-9b913dcf60fa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

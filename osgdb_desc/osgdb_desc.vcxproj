@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeometryVisitor.cpp" />
+    <ClCompile Include="ReaderWriterDESC.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeometryVisitor.h" />
+    <ClInclude Include="ReaderWriterDESC.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{39ED4742-E8CD-4989-AD5F-2B2C840B3E22}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <ProjectName>Plugin desc</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CLRSupport>false</CLRSupport>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CLRSupport>false</CLRSupport>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</OutDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">osgdb_descd</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">osgdb_descd</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">osgdb_desc</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">osgdb_desc</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;OSGEARTHDRIVERS_LIBRARY;QT_LARGEFILE_SUPPORT;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_QT3SUPPORT_LIB;QT3_SUPPORT;QT_WEBKIT_LIB;QGS_LIB;QT_MULTIMEDIA_LIB;QT_XML_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_SCRIPT_LIB;QAXSERVER;QT_SVG_LIB;QT_XMLPATTERNS_LIB;QT_DECLARATIVE_LIB;QT_PHONON_LIB;QGISDEBUG=1;CORE_EXPORT=__declspec(dllimport);GUI_EXPORT=__declspec(dllimport);PYTHON_EXPORT=__declspec(dllimport);ANALYSIS_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllexport);QT_NO_CAST_TO_ASCII;NOMINMAX;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;EXTERNAL_SPATIALITE;QWT_DLL;QT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;.\GeneratedFiles\$(ConfigurationName);$(OSGEO4W)\include;$(OSGEO4W)\include\QtCore;$(OSGEO4W)\include\QtGui;$(OSGEO4W)\include\QtMultimedia;$(OSGEO4W)\include\QtXml;$(OSGEO4W)\include\QtSql;$(OSGEO4W)\include\QtOpenGL;$(OSGEO4W)\include\QtNetwork;$(OSGEO4W)\include\QtScript;$(OSGEO4W)\include\Qt3Support;$(OSGEO4W)\include\ActiveQt;$(OSGEO4W)\include\QtSvg;$(OSGEO4W)\include\QtHelp;$(OSGEO4W)\include\QtWebKit;$(OSGEO4W)\include\QtXmlPatterns;$(OSGEO4W)\include\QtTest;$(OSGEO4W)\include\QtDeclarative;$(OSGEO4W)\include\phonon;$(OSGEO4W)\include\VGE.Foundation;$(OSGEO4W)\include\qt4;$(OSGEO4W)\include\qt4\qt;$(OSGEO4W)\include\qt4\qtcore;$(OSGEO4W)\include\qt4\qtgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OSGEO4W_ROOT)\bin\osgPlugins-3.2.0\$(TargetName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(OSGEO4W_ROOT)\lib</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>QtCored4.lib;osgEarthd.lib;osgd.lib;osgDBd.lib;OpenThreadsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OSGEO4W_ROOT)/lib/$(TargetName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;OSGEARTHDRIVERS_LIBRARY;QT_LARGEFILE_SUPPORT;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_QT3SUPPORT_LIB;QT3_SUPPORT;QT_WEBKIT_LIB;QGS_LIB;QT_MULTIMEDIA_LIB;QT_XML_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_SCRIPT_LIB;QAXSERVER;QT_SVG_LIB;QT_XMLPATTERNS_LIB;QT_DECLARATIVE_LIB;QT_PHONON_LIB;QGISDEBUG=1;CORE_EXPORT=__declspec(dllimport);GUI_EXPORT=__declspec(dllimport);PYTHON_EXPORT=__declspec(dllimport);ANALYSIS_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllexport);QT_NO_CAST_TO_ASCII;NOMINMAX;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;EXTERNAL_SPATIALITE;QWT_DLL;QT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(vcpkg_x64)\include;$(vcpkg_x64)\include\qt4\QtCore;$(vcpkg_x64)\include\qt4\QtGui;$(vcpkg_x64)\include\qt4;$(vcpkg_x64)\include\osgEarth</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OSGEO4W)\bin\osgPlugins-3.4.0\$(TargetName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(vcpkg_x64)\lib</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>QtCored4.lib;osgEarthd.lib;osgd.lib;osgDBd.lib;OpenThreadsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OSGEO4W_ROOT)/lib/$(TargetName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;OSGEARTHDRIVERS_LIBRARY;QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_QT3SUPPORT_LIB;QT3_SUPPORT;QT_WEBKIT_LIB;QGS_LIB;QT_MULTIMEDIA_LIB;QT_XML_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_SCRIPT_LIB;QAXSERVER;QT_SVG_LIB;QT_XMLPATTERNS_LIB;QT_DECLARATIVE_LIB;QT_PHONON_LIB;_WINDOWS;CORE_EXPORT=__declspec(dllimport);GUI_EXPORT=__declspec(dllimport);PYTHON_EXPORT=__declspec(dllimport);ANALYSIS_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllexport);QT_NO_CAST_TO_ASCII;NOMINMAX;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;EXTERNAL_SPATIALITE;QWT_DLL;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;.\GeneratedFiles\$(ConfigurationName);$(OSGEO4W)\include;$(OSGEO4W)\include\QtCore;$(OSGEO4W)\include\QtGui;$(OSGEO4W)\include\QtMultimedia;$(OSGEO4W)\include\QtXml;$(OSGEO4W)\include\QtSql;$(OSGEO4W)\include\QtOpenGL;$(OSGEO4W)\include\QtNetwork;$(OSGEO4W)\include\QtScript;$(OSGEO4W)\include\Qt3Support;$(OSGEO4W)\include\ActiveQt;$(OSGEO4W)\include\QtSvg;$(OSGEO4W)\include\QtHelp;$(OSGEO4W)\include\QtWebKit;$(OSGEO4W)\include\QtXmlPatterns;$(OSGEO4W)\include\QtTest;$(OSGEO4W)\include\QtDeclarative;$(OSGEO4W)\include\phonon;$(OSGEO4W)\include\VGE.Foundation;$(OSGEO4W)\include\qt4;$(OSGEO4W)\include\qt4\qt;$(OSGEO4W)\include\qt4\qtcore;$(OSGEO4W)\include\qt4\qtgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForcedIncludeFiles>osgEarthDrivers/export</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OSGEO4W_ROOT)\bin\osgPlugins-3.2.0\$(TargetName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(OSGEO4W_ROOT)\lib</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>QtCore4.lib;osgEarth.lib;osg.lib;osgDB.lib;OpenThreads.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OSGEO4W_ROOT)/lib/$(TargetName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;OSGEARTHDRIVERS_LIBRARY;QT_LARGEFILE_SUPPORT;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_QT3SUPPORT_LIB;QT3_SUPPORT;QT_WEBKIT_LIB;QGS_LIB;QT_MULTIMEDIA_LIB;QT_XML_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_SCRIPT_LIB;QAXSERVER;QT_SVG_LIB;QT_XMLPATTERNS_LIB;QT_DECLARATIVE_LIB;QT_PHONON_LIB;_WINDOWS;CORE_EXPORT=__declspec(dllimport);GUI_EXPORT=__declspec(dllimport);PYTHON_EXPORT=__declspec(dllimport);ANALYSIS_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllimport);APP_EXPORT=__declspec(dllexport);QT_NO_CAST_TO_ASCII;NOMINMAX;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;EXTERNAL_SPATIALITE;QWT_DLL;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(vcpkg_x64)\include;$(vcpkg_x64)\include\qt4\QtCore;$(vcpkg_x64)\include\qt4\QtGui;$(vcpkg_x64)\include\qt4;$(vcpkg_x64)\include\osgEarth</AdditionalIncludeDirectories>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OSGEO4W)\bin\osgPlugins-3.4.0\$(TargetName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(vcpkg_x64)\lib</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>QtCore4.lib;osg.lib;osgDB.lib;osgUtil.lib;OpenThreads.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OSGEO4W_ROOT)/lib/$(TargetName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" RccDir=".\GeneratedFiles" lupdateOnBuild="0" lupdateOptions="" lreleaseOptions="" QtVersion_x0020_Win32="4.8.6" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
