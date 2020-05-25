@@ -9,6 +9,7 @@
 #include "osgDB/writeFile"
 #include "osgDB/readFile"
 #include "ShapeFile.h"
+#include "GrassSolar.h"
 #include "GDAL_DS.h"
 
 ModelLoader::ModelLoader()
@@ -775,3 +776,168 @@ bool ShadowCaster::Intersects(const Ray& ray, double& t, double& slope, double& 
 		}
 		return false;
 }
+
+void ShadowCaster::ComputeHorizonAngleMaps(std::string infile, std::string outfile, double startAngle, double endAngle, double stepAngle)
+{
+		GDAL_DS<float>* ds = new GDAL_DS<float>();
+		ds->open(infile);
+		float* data = ds->readData(1);
+		std::vector<double> angles;
+		double curAngle = startAngle;
+		while (curAngle <= endAngle)
+		{
+				if (curAngle >= endAngle)
+				{
+						if (curAngle >= 360)
+								curAngle -= 360;
+						if (curAngle == startAngle && angles.size() > 0)
+								break;
+						angles.push_back(curAngle);
+						break;
+				}
+				angles.push_back(curAngle);
+				curAngle += stepAngle;
+		}
+		double nodata = ds->getNoData(1);
+
+		GDAL_DS<unsigned short>* dsOutput = new GDAL_DS<unsigned short>();
+		dsOutput->setDSInfo((GDAL_DSInfo*)ds);
+		dsOutput->numbands = angles.size();
+		dsOutput->create(outfile);
+
+		for (size_t i = 0; i < angles.size(); i++)
+		{
+				curAngle = angles[i];
+				osg::Vec3d sundir = GrassSolar::solarAngle2Vector(0, curAngle);
+				unsigned short* output = ComputeHorizonAngleMap(ds, data, nodata, osg::Vec2d(sundir.x(), sundir.y()));
+				dsOutput->writeData(i + 1, output, 100);
+				dsOutput->m_dataset->FlushCache();
+		}
+		delete dsOutput;
+		delete ds;
+		delete[] data;
+}
+
+unsigned short* ShadowCaster::ComputeHorizonAngleMap(void* pDS, float*& data, const double& nodata, const osg::Vec2d& dir)
+{
+		GDAL_DS<float>* ds = (GDAL_DS<float>*)pDS;
+		unsigned short* output = new unsigned short[ds->slice];
+		unsigned short* poutput = output;
+		for (int row = 0; row < ds->nrows; row++)
+		{
+				double y = ds->bound.MaxY - ds->adfGeoTransform[1] * row - ds->adfGeoTransform[1] * 0.5;
+				for (int col = 0; col < ds->ncols; col++)
+				{
+						double x = ds->bound.MinX + ds->adfGeoTransform[1] * col + ds->adfGeoTransform[1] * 0.5;
+						int index = col + row * ds->ncols;
+						float elev = data[index];
+						unsigned short encodedHorizon = 100;
+						if (elev > -500 && elev < 10000)
+						{
+								Ray groundRay(osg::Vec2d(x, y), dir);
+								double horizonAngle = ds->calHorizonAngle(groundRay, data);
+								if (horizonAngle < 0)
+										horizonAngle = 0;
+								double intPart;
+								double fractPart = modf(horizonAngle, &intPart);
+								encodedHorizon = (unsigned short)(intPart * 100) + (unsigned short)(fractPart * 100);
+						}
+						*poutput = encodedHorizon;
+						poutput++;
+				}
+				printf("%d/%d\n", row, ds->nrows);
+		}
+		return output;
+}
+
+//void ShadowCaster::ComputeHorizonAngleMapsFast(std::string infile, std::string outfile, double startAngle, double endAngle, double stepAngle)
+//{
+//		GDAL_DS<float>* ds = new GDAL_DS<float>();
+//		ds->open(infile);
+//		float* data = ds->readData(1);
+//		QuadTree* tree = new QuadTree;
+//		tree->setInfo(*ds);
+//		tree->setData(data);
+//		tree->buildChild();
+//		tree->m_child->buildChild();
+//		std::vector<QuadTree*> trees;
+//		trees.push_back(tree->m_child->m_child);
+//		trees.push_back(tree->m_child);
+//		trees.push_back(tree);
+//
+//
+//
+//		std::vector<double> angles;
+//		double curAngle = startAngle;
+//		while (curAngle <= endAngle)
+//		{
+//				if (curAngle >= endAngle)
+//				{
+//						if (curAngle >= 360)
+//								curAngle -= 360;
+//						if (curAngle == startAngle && angles.size() > 0)
+//								break;
+//						angles.push_back(curAngle);
+//						break;
+//				}
+//				angles.push_back(curAngle);
+//				curAngle += stepAngle;
+//		}
+//		double nodata = ds->getNoData(1);
+//
+//		GDAL_DS<unsigned short>* dsOutput = new GDAL_DS<unsigned short>();
+//		dsOutput->setDSInfo((GDAL_DSInfo*)ds);
+//		dsOutput->numbands = angles.size();
+//		dsOutput->create(outfile);
+//
+//		for (size_t i = 0; i < angles.size(); i++)
+//		{
+//				curAngle = angles[i];
+//				osg::Vec3d sundir = GrassSolar::solarAngle2Vector(0, curAngle);
+//				unsigned short* output = ComputeHorizonAngleMap(ds, data, nodata, osg::Vec2d(sundir.x(), sundir.y()));
+//				dsOutput->writeData(i + 1, output, 100);
+//				dsOutput->m_dataset->FlushCache();
+//		}
+//
+//		delete dsOutput;
+//		delete ds;
+//		delete[] data;
+//}
+//
+//void QuadTree::buildChild()
+//{
+//		m_child = new QuadTree;;
+//		double resolX = this->adfGeoTransform[1] * 2;
+//		double resolY = this->adfGeoTransform[5] * 2;
+//		m_child->ncols = (int)(ceil((double)ncols / 2.0));
+//		m_child->nrows = (int)(ceil((double)nrows / 2.0));
+//		m_child->bound.MinX = bound.MinX;
+//		m_child->bound.MaxY = bound.MaxY;
+//		m_child->bound.MaxX = bound.MinX + m_child->ncols * resolX;
+//		m_child->bound.MinY = bound.MaxY + m_child->nrows * resolY;
+//		memcpy(m_child->adfGeoTransform, adfGeoTransform, sizeof(double) * 6);
+//		m_child->adfGeoTransform[1] = resolX;
+//		m_child->adfGeoTransform[5] = resolY;
+//		m_child->numbands = 1;
+//		m_child->projection = this->projection;
+//		m_child->pszFormat = this->pszFormat;
+//		m_child->slice = m_child->ncols * m_child->nrows;
+//		m_child->nodata = this->nodata;
+//		if (m_child->nodata == 0)
+//				m_child->nodata = -9999;
+//		m_child->m_data.resize(m_child->slice);
+//		float block[4];
+//		int index = 0;
+//		for (int row = 0; row < m_child->nrows; row++)
+//		{
+//				for (int col = 0; col  < m_child->ncols; col++)
+//				{
+//						block[0] = getValue(col * 2,     row * 2);
+//						block[1] = getValue(col * 2 + 1, row * 2);
+//						block[2] = getValue(col * 2,     row * 2 + 1);
+//						block[3] = getValue(col * 2 + 1, row * 2 + 1);
+//						m_child->m_data[index] = sample(block);
+//						index++;
+//				}
+//		}
+//}
